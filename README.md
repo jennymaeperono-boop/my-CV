@@ -13,4 +13,4 @@ A responsive personal CV and portfolio website that presents my profile, educati
 
 # JENNY MAE PEREZ PERONO
 
-# LIVE VERCEL LINK: 
+# LIVE VERCEL LINK: jennymaeperono.vercel.app
