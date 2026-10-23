@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title description">
+  <title id="title">Sample workshop image placeholder</title>
+  <desc id="description">An illustrated workshop certificate marked as a sample placeholder.</desc>
+  <rect width="800" height="600" fill="#dcebf4"/>
+  <rect x="76" y="50" width="648" height="500" rx="8" fill="#fbfdff"/>
+  <rect x="94" y="68" width="612" height="464" rx="4" fill="none" stroke="#426b9a" stroke-width="3"/>
+  <path d="M94 84h612M94 516h612" stroke="#9bb9d8" stroke-width="2"/>
+  <rect x="354" y="140" width="92" height="70" rx="12" fill="#e5edf7" stroke="#426b9a" stroke-width="3"/>
+  <path d="m400 153 8 17 19 3-14 13 3 18-16-9-16 9 3-18-14-13 19-3z" fill="#426b9a"/>
+  <path d="M378 222h44M370 239h60" stroke="#9bb9d8" stroke-linecap="round" stroke-width="6"/>
+  <text x="400" y="304" fill="#243f63" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5" text-anchor="middle">SAMPLE WORKSHOP</text>
+  <path d="M240 336h320M280 360h240M320 406h160" stroke="#b7cbe0" stroke-linecap="round" stroke-width="8"/>
+  <text x="400" y="474" fill="#426b9a" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="3" text-anchor="middle">REPLACE WITH YOUR PHOTO</text>
+</svg>

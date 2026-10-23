@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title description">
+  <title id="title">Sample achievement image placeholder</title>
+  <desc id="description">An illustrated award card marked as a sample placeholder.</desc>
+  <rect width="800" height="600" fill="#e5edf7"/>
+  <rect x="76" y="50" width="648" height="500" rx="8" fill="#fbfdff"/>
+  <rect x="94" y="68" width="612" height="464" rx="4" fill="none" stroke="#426b9a" stroke-width="3"/>
+  <path d="M94 84h612M94 516h612" stroke="#9bb9d8" stroke-width="2"/>
+  <path d="m366 213-23 94 57-28 57 28-23-94" fill="#9bb9d8"/>
+  <circle cx="400" cy="188" r="58" fill="#dceafa" stroke="#426b9a" stroke-width="4"/>
+  <circle cx="400" cy="188" r="40" fill="#fbfdff" stroke="#9bb9d8" stroke-width="3"/>
+  <path d="m400 157 9 19 21 3-15 15 4 21-19-10-19 10 4-21-15-15 21-3z" fill="#426b9a"/>
+  <text x="400" y="350" fill="#243f63" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5" text-anchor="middle">SAMPLE ACHIEVEMENT</text>
+  <path d="M268 384h264M304 408h192" stroke="#b7cbe0" stroke-linecap="round" stroke-width="8"/>
+  <text x="400" y="474" fill="#426b9a" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="3" text-anchor="middle">REPLACE WITH YOUR PHOTO</text>
+</svg>

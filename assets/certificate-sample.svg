@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title description">
+  <title id="title">Sample certificate image placeholder</title>
+  <desc id="description">An illustrated certificate marked as a sample placeholder.</desc>
+  <rect width="800" height="600" fill="#dceafa"/>
+  <rect x="76" y="50" width="648" height="500" rx="8" fill="#fbfdff"/>
+  <rect x="94" y="68" width="612" height="464" rx="4" fill="none" stroke="#426b9a" stroke-width="3"/>
+  <path d="M94 84h612M94 516h612" stroke="#9bb9d8" stroke-width="2"/>
+  <circle cx="400" cy="190" r="44" fill="#e5edf7" stroke="#426b9a" stroke-width="3"/>
+  <path d="m400 158 10 20 22 3-16 15 4 22-20-11-20 11 4-22-16-15 22-3z" fill="#426b9a"/>
+  <text x="400" y="278" fill="#243f63" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5" text-anchor="middle">SAMPLE CERTIFICATE</text>
+  <path d="M240 310h320M280 334h240M320 380h160" stroke="#b7cbe0" stroke-linecap="round" stroke-width="8"/>
+  <text x="400" y="474" fill="#426b9a" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="3" text-anchor="middle">REPLACE WITH YOUR PHOTO</text>
+</svg>
