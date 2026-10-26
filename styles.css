@@ -1578,7 +1578,13 @@ h2 {
   }
 
   .project-grid {
+    grid-template-columns: 1fr;
     gap: 30px 16px;
+  }
+
+  .project-card:first-child,
+  .project-card-featured {
+    grid-column: auto;
   }
 
   .project-card:first-child .project-image,
