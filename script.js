@@ -64,29 +64,69 @@ const certificateDialog = document.querySelector(".certificate-dialog");
 const certificateDialogImage = document.querySelector(".certificate-dialog-image");
 const certificateDialogCaption = document.querySelector(".certificate-dialog-caption");
 const certificateDialogClose = document.querySelector(".certificate-dialog-close");
+const imageDialogPrevious = document.querySelector(".image-dialog-prev");
+const imageDialogNext = document.querySelector(".image-dialog-next");
 
 if (
   certificateDialog instanceof HTMLDialogElement &&
   certificateDialogImage instanceof HTMLImageElement &&
   certificateDialogCaption instanceof HTMLElement &&
-  certificateDialogClose instanceof HTMLButtonElement
+  certificateDialogClose instanceof HTMLButtonElement &&
+  imageDialogPrevious instanceof HTMLButtonElement &&
+  imageDialogNext instanceof HTMLButtonElement
 ) {
+  let activeGallery = [];
+  let activeGalleryCaption = "";
+  let activeGalleryIndex = 0;
+
+  function showGalleryImage(index) {
+    activeGalleryIndex = (index + activeGallery.length) % activeGallery.length;
+    const imagePath = activeGallery[activeGalleryIndex];
+
+    if (!imagePath) {
+      throw new Error("Life Pulse gallery image is missing.");
+    }
+
+    certificateDialogImage.src = imagePath;
+    certificateDialogImage.alt = `${activeGalleryCaption} screenshot ${activeGalleryIndex + 1}`;
+    certificateDialogCaption.textContent = `${activeGalleryCaption} · ${activeGalleryIndex + 1} of ${activeGallery.length}`;
+  }
+
   document.querySelectorAll("[data-certificate-view], [data-image-view]").forEach((button) => {
     button.addEventListener("click", () => {
       const preview = button.querySelector("img");
-      const title =
+      const caption =
         button.dataset.imageCaption ??
         button.closest(".certificate-card")?.querySelector("strong")?.textContent;
+      activeGallery = button.dataset.imageGallery?.split("|").filter(Boolean) ?? [];
 
-      if (!preview || !title) {
+      if (!preview || !caption) {
         throw new Error("Image preview is missing its image or caption.");
       }
 
-      certificateDialogImage.src = preview.currentSrc || preview.src;
-      certificateDialogImage.alt = preview.alt;
-      certificateDialogCaption.textContent = title.textContent ?? "";
+      if (activeGallery.length > 0) {
+        activeGalleryCaption = caption;
+        showGalleryImage(0);
+        imageDialogPrevious.hidden = false;
+        imageDialogNext.hidden = false;
+      } else {
+        certificateDialogImage.src = preview.currentSrc || preview.src;
+        certificateDialogImage.alt = preview.alt;
+        certificateDialogCaption.textContent = caption;
+        imageDialogPrevious.hidden = true;
+        imageDialogNext.hidden = true;
+      }
+
       certificateDialog.showModal();
     });
+  });
+
+  imageDialogPrevious.addEventListener("click", () => {
+    showGalleryImage(activeGalleryIndex - 1);
+  });
+
+  imageDialogNext.addEventListener("click", () => {
+    showGalleryImage(activeGalleryIndex + 1);
   });
 
   certificateDialogClose.addEventListener("click", () => {
@@ -103,7 +143,17 @@ if (
     if (event.key === "Escape") {
       event.preventDefault();
       certificateDialog.close();
+    } else if (event.key === "ArrowLeft" && activeGallery.length > 0) {
+      showGalleryImage(activeGalleryIndex - 1);
+    } else if (event.key === "ArrowRight" && activeGallery.length > 0) {
+      showGalleryImage(activeGalleryIndex + 1);
     }
+  });
+
+  certificateDialog.addEventListener("close", () => {
+    activeGallery = [];
+    imageDialogPrevious.hidden = true;
+    imageDialogNext.hidden = true;
   });
 }
 
