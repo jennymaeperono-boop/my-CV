@@ -738,7 +738,8 @@ h2 {
   gap: 34px 22px;
 }
 
-.project-card:first-child {
+.project-card:first-child,
+.project-card-featured {
   grid-column: span 2;
 }
 
@@ -750,7 +751,8 @@ h2 {
   background: #e6dfce;
 }
 
-.project-card:first-child .project-image {
+.project-card:first-child .project-image,
+.project-card-featured .project-image {
   height: clamp(260px, 36vw, 420px);
 }
 
@@ -1579,7 +1581,8 @@ h2 {
     gap: 30px 16px;
   }
 
-  .project-card:first-child .project-image {
+  .project-card:first-child .project-image,
+  .project-card-featured .project-image {
     height: 50vw;
     min-height: 230px;
   }
@@ -1688,11 +1691,13 @@ h2 {
     gap: 28px;
   }
 
-  .project-card:first-child {
+  .project-card:first-child,
+  .project-card-featured {
     grid-column: auto;
   }
 
   .project-card:first-child .project-image,
+  .project-card-featured .project-image,
   .project-image {
     height: 58vw;
     min-height: 205px;
