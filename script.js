@@ -71,13 +71,15 @@ if (
   certificateDialogCaption instanceof HTMLElement &&
   certificateDialogClose instanceof HTMLButtonElement
 ) {
-  document.querySelectorAll("[data-certificate-view]").forEach((button) => {
+  document.querySelectorAll("[data-certificate-view], [data-image-view]").forEach((button) => {
     button.addEventListener("click", () => {
       const preview = button.querySelector("img");
-      const title = button.closest(".certificate-card")?.querySelector("strong");
+      const title =
+        button.dataset.imageCaption ??
+        button.closest(".certificate-card")?.querySelector("strong")?.textContent;
 
       if (!preview || !title) {
-        throw new Error("Certificate preview is missing its image or title.");
+        throw new Error("Image preview is missing its image or caption.");
       }
 
       certificateDialogImage.src = preview.currentSrc || preview.src;
